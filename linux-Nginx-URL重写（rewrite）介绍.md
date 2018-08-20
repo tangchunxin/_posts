@@ -12,17 +12,12 @@ rewrite ^([^\.]*)/([0-9]+)/([0-9]+)/([0-9]+)/([a-zA-Z0-9]+)\.(gif|jpg|jpeg)$  ht
 rewrite '^/images/([a-z]{2})/([a-z0-9]{5})/(.*)\.(png|jpg|gif)$' /data?file=$3.$4;
 ```
 
-    和apache等web服务软件一样，rewrite的组要功能是实现RUL地址的重定向。Nginx的rewrite功能需要PCRE软件的支持，即通过perl兼容正则表达式语句进行规则匹配的。默认参数编译nginx就会支持rewrite的模块，但是也必须要PCRE的支持
-
- -   rewrite是实现URL重写的关键指令，根据regex（正则表达式）部分内容，重定向到replacement，结尾是flag标记。
+- 和apache等web服务软件一样，rewrite的组要功能是实现RUL地址的重定向。Nginx的rewrite功能需要PCRE软件的支持，即通过perl兼容正则表达式语句进行规则匹配的。默认参数编译nginx就会支持rewrite的模块，但是也必须要PCRE的支持
+-  rewrite是实现URL重写的关键指令，根据regex（正则表达式）部分内容，重定向到replacement，结尾是flag标记。
 
 - rewrite语法格式及参数语法说明如下:
 
-    rewrite|<regex>|<replacement>|[flag]|
-    ---|:---:|:---:|:---:|
-    |关键字|正则|替代内容|flag标记
-
- 
+    rewrite
 
     关键字：其中关键字error_log不能改变
 

@@ -1,9 +1,24 @@
 ---
-layout: w
 title: php 导出 excel 简单方式
 date: 2018-05-09 22:02:08
 tags:
 ---
+
+php 导出数据到excel方式  
+
+#### php 导出 txt  简单方式
+
+
+ ```
+   //下载文件名
+    $file_name = $name.date('Y.m.d.H-i-s',time());
+    $filename = iconv('UTF-8', 'GBK', $file_name);
+    header('Content-Type: text/plain');
+    header ( 'Content-Disposition: attachment;filename="' . $filename . '.txt"' ); 
+    header ( 'Cache-Control: max-age=0' );
+    echo "我是.txt的内容";
+```
+
 #### php 导出 excel  简单方式
 
 ```
@@ -29,7 +44,9 @@ $str .= trim($pname)."\t".trim($url)."\t".trim($icp)."\t\n";
  echo $str;
  
  ```
+ 
  header部分可修改为
+ 
  ```
  header('Content-Description: File Transfer');
 header('Content-Type: application/vnd.ms-excel');
@@ -55,14 +72,3 @@ exit;
  
  
  
- #### php 导出 txt  简单方式`
- 
- ```
-   //下载文件名
-    $file_name = $name.date('Y.m.d.H-i-s',time());
-    $filename = iconv('UTF-8', 'GBK', $file_name);
-    header('Content-Type: text/plain');
-    header ( 'Content-Disposition: attachment;filename="' . $filename . '.txt"' ); 
-    header ( 'Cache-Control: max-age=0' );
-    echo "我是.txt的内容";
-```
