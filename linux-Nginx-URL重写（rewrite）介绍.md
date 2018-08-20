@@ -1,5 +1,5 @@
 ---
-title: linux Nginx URL重写（rewrite）介绍
+title: Nginx URL（rewrite）介绍
 date: 2018-04-28 21:36:29
 tags:
 ---

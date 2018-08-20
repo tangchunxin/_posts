@@ -1,5 +1,5 @@
 ---
-title: linux nginx设置禁止通过ip访问服务器
+title: nginx设置禁止通过ip访问
 date: 2018-04-28 21:35:28
 tags:
 ---
