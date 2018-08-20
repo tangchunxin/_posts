@@ -82,13 +82,13 @@ sed -i 's/OPTIONS.*$/OPTIONS=\" -l 127\.0\.0\.1 -P \/var\/run\/memcached\.pid\"/
 systemctl enable memcached.service
 systemctl restart memcached.service
 ```
-## ------------svn and rzsz--------------------
+## svn and rzsz
 ```
 yum -y install subversion.x86_64
 yum -y install lrzsz.x86_64
 ```
 
-## --------------php安装-------------------------------
+## php安装
 ```
 yum install -y php71.x86_64 php71-php-cli.x86_64 php71-php-common.x86_64 php71-php-devel.x86_64 php71-php-fpm.x86_64 php71-php-json.x86_64 php71-php-mbstring.x86_64 php71-php-mcrypt.x86_64 php71-php-mysqlnd.x86_64 php71-php-opcache.x86_64 php71-php-pdo.x86_64 php71-php-pecl-apcu.x86_64 php71-php-pecl-event.x86_64 php71-php-pecl-igbinary.x86_64 php71-php-pecl-imagick.x86_64 php71-php-pecl-scrypt.x86_64  php71-php-pecl-memcached.x86_64 php71-php-process.x86_64 php71-php-pecl-gearman.x86_64 php71-php-pecl-swoole.x86_64 php71-php-xml.x86_64
 ```
@@ -100,7 +100,7 @@ yum install -y php71w-fpm php71w-opcache php71w-cli php71w-gd php71w-imap php71w
 systemctl enable php71-php-fpm
 systemctl restart php71-php-fpm
 ```
-## -----------------gearman 服务器安装-------------------------
+## gearman 服务器安装
 ```
 yum install -y gearmand.x86_64
 ```
@@ -113,7 +113,7 @@ sed -i 's/\# OPTIONS.*$/OPTIONS=\"-L 127.0.0.1 -p 4730 -t 100 -R\"/g' /etc/sysco
 systemctl enable gearmand.service
 systemctl restart gearmand.service
 ```
-## -------------nginx 安装-------------------------------
+## nginx 安装
 ```
 yum -y install nginx.x86_64
 ```
@@ -185,26 +185,22 @@ systemctl enable nginx.service
 systemctl restart nginx.service
 ```
 
-## -------------安装git--------------------------------
+## 安装git
 ```
 #yum -y install git
 ```
-## -------------压力测试 ab 安装----------------------------
+## 压力测试 ab 安装
 ```
 yum -y install httpd-tools.x86_64
 ```
 
-### -----------------------------------------------------
 ### 编辑自启动
 ```
 #vi /etc/rc.local
 
 ```
 
-################################################################
-################################################################
-
-## -----------sshd暴力破解的预防--------------
+## sshd暴力破解的预防
 ```
 #http://www.linuxde.net/2011/09/865.html
 
@@ -230,19 +226,19 @@ fi
 done
 ```
 
-## -------------支持中文------------
+## 支持中文
 ```
 echo "export LANG=zh_CN.UTF-8" >> /home/sshuser/.bash_profile
 ```
-## ------------svn cleanup报错的时候解决
+## svn cleanup报错的时候解决
 ```
 #http://blog.csdn.net/luojian520025/article/details/22196865
 ```
-## -------------------阿里云磁盘挂载
+## -阿里云磁盘挂载
 ```
 #http://www.cnblogs.com/dudu/archive/2012/12/07/aliyun-linux-fdisk.html
 ```
-## ----------nginx 配置 ssl 参考----------------
+## nginx 配置 ssl 参考
 ```
 #http://www.cnblogs.com/yanghuahui/archive/2012/06/25/2561568.html
 openssl genrsa -des3 -out server.key 1024
@@ -255,7 +251,7 @@ openssl rsa -in server.key.org -out server.key
 openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 ```
 
-## ---------------DDOS 等网路攻击的了解-----------------------
+## DDOS 等网路攻击的了解
 ```
 # chattr -i /usr/local/ddos/ignore.ip.list #解除不允许修改
 # chattr +i /usr/local/ddos/ignore.ip.list #不允许修改文件
@@ -265,11 +261,11 @@ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 #http://www.cnblogs.com/wjoyxt/p/6155672.html
 #另：使用CDN分担静态网络内容；使用负载均衡隐藏真实应用ip
 ```
-## -----------------升级 gcc-----------------
+## 升级 gcc
 ```
 #http://blog.gimhoy.com/archives/yum-install-gcc4-8-x.html
 ```
-## -----------------vim乱码问题---------------------
+## vim乱码问题
 ```
 #http://blog.csdn.net/theblackbeard/article/details/52314974
 sed -i '1s/^/set encoding=prc\n/' /etc/vimrc
@@ -281,26 +277,26 @@ sed -i '1s/^/set fileformats=unix\n/' /etc/virc
 sed -i '1s/^/set termencoding=utf-8\n/' /etc/virc
 sed -i '1s/^/set fileencodings=utf-8,gb2312,gbk,gb18030\n/' /etc/virc
 ```
-## ---------------------腾讯云挂在硬盘--------------------------
+## 腾讯云挂在硬盘
 ```
 #http://jingyan.baidu.com/article/48b37f8d393e9c1a65648847.html
 ```
-## -----------------监控带宽-----------------
+## 监控带宽
 ```
 # http://bbs.qcloud.com/thread-20893-1-1.html
 yum install iftop -y
 ```
-## -------------------------------
+## -----
 ```
 # vi 编辑器的 encoding 的问题，进入 vi 后按 ESC 和 : 键，输入 :set fileencoding=prc
 ```
 
-## ----------------shadowsocks 代理------------
+## shadowsocks 代理-
 ```
 #http://www.hibenben.com/4515.html
 ```
 
-## -------- ipv6----------------------- 
+## ipv6
 ```
 #http://blog.csdn.net/wanglixin1999/article/details/52182001
 ```

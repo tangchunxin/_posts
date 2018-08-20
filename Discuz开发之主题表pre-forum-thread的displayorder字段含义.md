@@ -1,12 +1,12 @@
 ---
-title: Discuz开发之主题表pre_forum_thread的displayorder字段含义
+title: Dz forum_thread的displayorder
 date: 2018-05-09 21:54:58
 tags:
 ---
 
 ## Discuz开发之主题表pre_forum_thread的displayorder字段含义
 
-#### Discuz!二次开发和插件开发中经常涉及对主题表的操作，本文就介绍一下pre_forum_thread的displayorder字段含义：
+#### Discuz!本文就介绍一下pre_forum_thread的displayorder字段含义：
 
 displayorder取值范围为：4,3,2,1,0，-1，-2，-3，-4，他们的含义如下：
 

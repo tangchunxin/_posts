@@ -1,5 +1,5 @@
 ---
-title: defined安全判断，放于被包含脚本中
+title: defined安全判断
 date: 2018-04-25 21:41:13
 tags:
 ---
