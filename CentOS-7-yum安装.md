@@ -36,7 +36,7 @@ systemctl restart sshd.service
 ## 关闭SELinux的两种方法
 - #http://roclinux.cn/?p=2264
 
-## -------------------载入新的yum源-------------------------------
+## 载入新的yum源
 ```
 rpm -Uvh ftp://195.220.108.108/linux/centos/7.3.1611/extras/x86_64/Packages/epel-release-7-9.noarch.rpm
 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
@@ -67,7 +67,7 @@ echo 'export LANG=zh_CN.UTF-8' >> /home/sshuser/.bash_profile
 yum install net-tools
 ```
 
-## --------------------memcached  服务器端-----------------------------
+## memcached  服务器端
 ```
 yum -y install memcached.x86_64
 ```
@@ -286,7 +286,7 @@ sed -i '1s/^/set fileencodings=utf-8,gb2312,gbk,gb18030\n/' /etc/virc
 # http://bbs.qcloud.com/thread-20893-1-1.html
 yum install iftop -y
 ```
-## -----
+## 编辑器的 encoding 的问题
 ```
 # vi 编辑器的 encoding 的问题，进入 vi 后按 ESC 和 : 键，输入 :set fileencoding=prc
 ```

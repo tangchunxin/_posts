@@ -70,3 +70,24 @@ echo 'TRANSLIT : ', iconv("UTF-8", "ISO-8859-1//TRANSLIT", $text), PHP_EOL;
 echo 'IGNORE   : ', iconv("UTF-8", "ISO-8859-1//IGNORE", $text), PHP_EOL;
 echo 'Plain    : ', iconv("UTF-8", "ISO-8859-1", $text), PHP_EOL;
 ```
+
+#### 数据转码
+    /**
+	 * 数据转码
+	 * @param unknown $str
+	 * @param unknown $code 目标编码
+	 * @return unknown
+	 */
+	public function conversion_coding($str, $code){
+		$encode = mb_detect_encoding($str, array('UTF-8','GBK','GB2312','BIG5','ASCII'));
+		if($encode == $code or !$encode){
+			return $str;
+		}
+		if(!is_string($str)){
+			return $str;
+		}
+		if($encode === 'GB2312' or $encode === 'GBK'){
+			$encode = $encode . '//IGNORE';
+		}
+		return iconv($encode, $code, $str);
+	}
