@@ -79,7 +79,7 @@ echo 'Plain    : ', iconv("UTF-8", "ISO-8859-1", $text), PHP_EOL;
 	 * @return unknown
 	 */
 	public function conversion_coding($str, $code){
-		$encode = mb_detect_encoding($str, array('UTF-8','GBK','GB2312','BIG5','ASCII'));
+		$encode = mb_detect_encoding($str, array('GB2312','GBK','UTF-8','BIG5','ASCII'));
 		if($encode == $code or !$encode){
 			return $str;
 		}
@@ -91,3 +91,29 @@ echo 'Plain    : ', iconv("UTF-8", "ISO-8859-1", $text), PHP_EOL;
 		}
 		return iconv($encode, $code, $str);
 	}
+	
+#### mb_detect_encoding
+
+   当在php中使用mb_detect_encoding函数进行编码识别时，很多人都碰到过识别编码有误的问题，例如对与GB2312和UTF- 8，或者UTF-8和GBK(这里主要是对于cp936的判断),网上说是由于字符短是，mb_detect_encoding会出现误判。 
+例如: 
+
+复制代码 代码如下:
+
+```
+$encode = mb_detect_encoding($keytitle, array("ASCII",'UTF-8′,"GB2312′,"GBK",'BIG5′)); 
+if ($encode == “UTF-8″){ 
+$keytitle = iconv("UTF-8″,"GBK",$keytitle); 
+} 
+```
+这段代码的作用是检测字符串的编码是否UTF-8，是的话就转换为GBK。 
+可是当 $keytitle = “%D0%BE%C6%AC”;时。检测结果却是UTF-8.这个bug其实不算是bug，写程序时也不应当过于依赖mb_detect_encoding，当字符串较短时，检测结果产生偏差的可能性很大。 
+怎么解决呢，我的办法是： 
+复制代码 代码如下:
+
+```
+$encode = mb_detect_encoding($keytitle, array('ASCII','GB2312′,'GBK','UTF-8'); 
+```
+
+三个参数分别是：被检测的输入变量、编码方式的检测顺序(一旦为真，后面自动忽略)、strict模式 
+对编码检测的顺序进行调整，将最大可能性放在前面，这样减少被错误转换的机会。 
+一般要先排gb2312，当有GBK和UTF-8时，需要将常用的排列到前面。
