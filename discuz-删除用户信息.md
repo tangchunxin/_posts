@@ -15,5 +15,5 @@ tags:
 
 - 手机号绑定关系:t_common_member_profile
 
-- DELETE FROM  `t_common_member_profile`  WHERE `uid` = 161816 AND  `mobile` = 15934848061; 
+- DELETE FROM  `t_common_member_profile`  WHERE `uid` = 161816 AND  `mobile` = ******; 
 
