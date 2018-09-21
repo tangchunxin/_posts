@@ -17,3 +17,4 @@ tags:
 
 - DELETE FROM  `t_common_member_profile`  WHERE `uid` = 161816 AND  `mobile` = ******; 
 
+- touyouquan  open_member_bind表moblie字段
