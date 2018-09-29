@@ -4,12 +4,14 @@ date: 2018-09-29 17:34:25
 tags:
 ---
 ## 涉及的id
+
 - $_G uid 用户id
 - $_G fid 当前帖子属于的板块id
 - $_G tid 帖子主题id
 - $_G pid 帖子id
 ## 发帖按钮下拉菜单
-#### $_G group 会员用户组权限表
+
+### $_G group 会员用户组权限表
 
 - allowpost 允许发帖
 - allowposttrade 允许发表交易
@@ -28,7 +30,8 @@ tags:
 - allowthreadplugin 允许发布扩展特殊主题
 
 ## 帖子及评论部分
-#### post 文章及评论列表
+
+###  post 文章及评论列表
 
 - $postlist_first[groupicon]：楼主用户组图标
 - $postlist_first['medals']：楼主勋章
@@ -87,6 +90,7 @@ tags:
 - visitedforums 版块列表和帖子浏览中最近访问过的版块
 
 ## 文章标题
+
 - $_G forum_threadstamp 图章
 - $vid 认证序号对应的id
 - $pluginhooks 插件
@@ -114,7 +118,7 @@ tags:
 
 ## $_G forum 板块表
 
-#### threadtypes 主题分类
+###  threadtypes 主题分类
 
 - threadsorts 分类信息 板块不同下拉菜单不通
 - status 显示状态 (0:隐藏 1:正常 3:群组)
@@ -124,7 +128,8 @@ tags:
 - alloweditpost 板块是否允许编辑帖子
 
 ## 特殊类型帖子
-#### 辩论帖子
+
+###  辩论帖子
 - $debate
 
 - endtime 结束时间 等于0 代表没填写
@@ -145,7 +150,8 @@ tags:
 - winner 获胜方 (0:平局 1:为正方 2:为反方) 裁判评判结果
 - bestdebater 最佳辩手用户名
 
-#### 辩论帖子表 debate $post
+###  辩论帖子表 debate $post
+
 - stand 立场 (0:中立 1:正方 2:为反方)
 - uid 发起人id
 - pid 帖子id
@@ -156,7 +162,8 @@ tags:
 - releatcollectionmore 收入该淘帖主题的专辑列表
 - sourcecollection 访问来源：您是从淘专辑xxx访问到本帖的
 
-#### 投票帖子
+###  投票帖子
+
 单独变量
 
 - $expiration 过期时间
@@ -177,6 +184,7 @@ tags:
 - $optiontype checkbox 时为多选
 - $hiddenreplies 回帖是否仅楼主可见
 - $rushreply 是否为抢楼帖子
+
 单独变量
 
 - $userRewardList 打赏用户列表
@@ -193,7 +201,8 @@ tags:
 - $_G['cookie'] 客户端cookie
 - $_GET['highlight'] 搜索词
 
-####楼中楼
+### 楼中楼
+
 - 楼中楼模板： source/plugin/dxksst_floor/template/list_newvesion.htm
 - 楼中楼回复： source/plugin/dxksst_floor/template/ajax.htm
 - 楼中楼翻页： source/plugin/dxksst_floor/template/page.htm
@@ -201,7 +210,7 @@ tags:
 - have == 1 : 没有回复 , $have == 2 有回复
 - $upid 楼中楼所在楼层的 id
 
-#### 楼中楼的楼层循环：
+###  楼中楼的楼层循环：
 
 - $v[message] 回复内容
 - $v[dateline] 回复时间
